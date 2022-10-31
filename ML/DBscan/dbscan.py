@@ -7,7 +7,7 @@ points = np.empty((0, 2), dtype='f')
 c_radius = 2
 c_color = (0, 0, 255)
 c_thickness = 0
-jet_radius = 50
+jet_radius = 20
 jet_thr = 0.5
 
 bg_color = (255, 255, 255)
@@ -115,15 +115,15 @@ dist = np.array([[get_dist(point, neighbour) for point in points] for neighbour 
 dist.sort(axis=1)
 
 m = 8
-print('Расстояния до ближайших m соседей: ')
-print(dist[::, 1:m + 1])
+# print('Расстояния до ближайших m соседей: ')
+# print(dist[::, 1:m + 1])
 
 avg_dist = np.mean(dist[::, 1:m + 1], axis=1)
 avg_dist.sort()
-print('Средние расстояния до ближайших m соседей: ')
-print(avg_dist)
+# print('Средние расстояния до ближайших m соседей: ')
+# print(avg_dist)
 
-dbscan = DB_SCAN(points, eps=40, min_samples=m)
+dbscan = DB_SCAN(points, eps=50, min_samples=m)
 
 labels = dbscan.get_labels()
 
