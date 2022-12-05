@@ -149,4 +149,7 @@ for i in range(10000):
     mutated_pop = mutate_population(new_population_set)
 
 
+print()
 best_solution
+
+
